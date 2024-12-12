@@ -3,8 +3,12 @@ import pygraphviz as pgv
 import numpy as np
 
 class TreeVisualizer:
-    def __init__(self, tree):
+    def __init__(self, tree, firefighter_positions):
         self.tree = tree
+        self.firefighter_positions = firefighter_positions
+
+    def set_firefighter_positions(self, firefighter_positions):
+        self.firefighter_positions = firefighter_positions
 
     def add_edges(self, fig):
         """
@@ -42,12 +46,11 @@ class TreeVisualizer:
 
         self.add_edges(fig)
 
-        firefighter_positions = np.array(tree.get_firefighter_positions())
-        if firefighter_positions.size > 0:
+        if self.firefighter_positions.size > 0:
             fig.add_trace(go.Scatter3d(
-                x=firefighter_positions[:, 0],
-                y=firefighter_positions[:, 1],
-                z=firefighter_positions[:, 2],
+                x=self.firefighter_positions[:, 0],
+                y=self.firefighter_positions[:, 1],
+                z=self.firefighter_positions[:, 2],
                 mode='markers',
                 marker=dict(size=10, color='green'),
                 name='Firefighters'
@@ -100,10 +103,11 @@ class TreeVisualizer:
         G.layout()
         G.draw("images/grafo_2d.png")
 
-    def plot_fire_state(self, burning_nodes, burned_nodes, step):
+    def plot_fire_state(self, burning_nodes, burned_nodes, step, firefigther_positions):
         """
         Genera y guarda una imagen 3D del estado actual de la propagación del incendio.
         """
+        self.set_firefighter_positions(firefigther_positions)
         fig = go.Figure()
 
         # Nodos en llamas (burning)
@@ -152,17 +156,17 @@ class TreeVisualizer:
                     showlegend=False
                     ))
 
-        # Agregar posiciones de los bomberos
-        firefighter_positions = np.array(self.tree.get_firefighter_positions())
-        if firefighter_positions.size > 0:
-            fig.add_trace(go.Scatter3d(
-                x=firefighter_positions[:, 0],
-                y=firefighter_positions[:, 1],
-                z=firefighter_positions[:, 2],
-                mode='markers',
-                marker=dict(size=10, color='green'),
-                name='Firefighters'
-            ))
+        # Agregar posiciones del bombero si es entero tomar el nodo
+        if(type(self.firefighter_positions) == int):
+            self.firefighter_positions = self.tree.nodes_positions[self.firefighter_positions]
+        fig.add_trace(go.Scatter3d(
+            x=[self.firefighter_positions[0]],
+            y=[self.firefighter_positions[1]],
+            z=[self.firefighter_positions[2]],
+            mode='markers',
+            marker=dict(size=10, color='green'),
+            name='Firefighter'
+        ))
 
         # Configuracion
         fig.update_layout(title=f'Step {step}: Fire Propagation',

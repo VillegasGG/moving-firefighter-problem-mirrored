@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from fire_simulation import FirePropagation
 from utils import Tree
 from tree_visualizer import TreeVisualizer
+import numpy as np
 
 # Cargar los datos de los experimentos
 with open('resultsChico/experiments_moving_nodes.json', 'r') as f:
@@ -47,7 +48,13 @@ def plot_experiment(experiment_id, method, experiments_data, results_data, save_
         tree_data = json.load(f)
 
     tree_nodes = tree_data['nodes']
-    tree_edges = tree_data['edges']
+    adjacency_matrix = tree_data['edges']
+    edges = []
+    for i, row in enumerate(adjacency_matrix):
+        for j, value in enumerate(row):
+            if value == 1.0:
+                edges.append((i, j))
+
     tree_positions = tree_data['positions']
     tree_root = tree_data['root']
     initial_firefighter_position = tree_data['initial_firefighter_position']
@@ -56,10 +63,24 @@ def plot_experiment(experiment_id, method, experiments_data, results_data, save_
     firefighter_positions = result['solution']
 
     # Generar el objeto tree
-    tree = Tree(tree_nodes, tree_edges, tree_positions)   
+    tree = Tree(tree_nodes, edges, tree_positions)   
 
-    visualize = TreeVisualizer(tree)
+    visualize = TreeVisualizer(tree, initial_firefighter_position)
 
+    # Inicializar la propagación del fuego
+    fire_propagation = FirePropagation(tree)
+    fire_propagation.start_fire(tree_root)
+    burning_nodes, burned_nodes = fire_propagation.display_state()
+    step = 0
+
+    visualize.plot_fire_state(burning_nodes, burned_nodes, step, initial_firefighter_position)
+    visualize.plot_2d_tree_with_root(tree, tree_root)
+
+    for firefighter_position in firefighter_positions:
+        step += 1
+        fire_propagation.propagate()
+        burning_nodes, burned_nodes = fire_propagation.display_state()
+        visualize.plot_fire_state(burning_nodes, burned_nodes, step, firefighter_position)
 
 
 # Graficar y guardar cada paso de un experimento específico

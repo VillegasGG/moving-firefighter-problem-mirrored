@@ -98,6 +98,17 @@ class Tree:
             nodes_idx += 1
 
         return np.array(nodes)
+    
+    def get_neighbors(self, node):
+        """
+        Devuelve una lista de los nodos vecinos de un nodo dado
+        """
+        assert 0 <= node < len(self.nodes), "El índice del nodo está fuera de los límites"
+
+        # Encuentra los índices de los nodos que son vecinos
+        neighbors = np.argwhere(self.edges[node] == 1).flatten()
+        
+        return neighbors
         
 class TREE(Structure):
     _fields_ = [
