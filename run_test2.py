@@ -32,12 +32,7 @@ runners = {
            "runner": ILP(),
            "max_nodes": 100,
            "validation_fn": np.equal
-    },
-    "miqcp": {
-           "runner": MIQCP(),
-           "max_nodes": 40,
-           "validation_fn": np.equal
-    },
+    }
 }
 
 queue = multiprocessing.Queue()
@@ -119,6 +114,16 @@ for n in n_nodes:
             
             experiment_id = current_id
             current_id += 1
+
+            # Save tree and experiment id
+            with open('trees/tree_' + str(experiment_id) + '.json', 'w') as f:
+                f.write(json.dumps({
+                    "nodes": tree.nodes.tolist(),
+                    "edges": tree.edges.tolist(),
+                    "positions": tree.nodes_positions.tolist(),
+                    "root": root,
+                    "initial_firefighter_position": initial_ff_position.tolist()
+                }, indent=4))
 
             experiments.append({
                 "id": experiment_id,

@@ -2,32 +2,31 @@
     "dynamic_programming": [
         {
             "experiment": 1,
-            "duration": 0.021352529525756836,
+            "duration": 0.018610477447509766,
             "solution": [
                 -1,
+                6
+            ],
+            "optimal": 4,
+            "message": "Done!"
+        },
+        {
+            "experiment": 2,
+            "duration": 0.016164064407348633,
+            "solution": [
+                -1,
+                0,
                 1
             ],
             "optimal": 3,
             "message": "Done!"
         },
         {
-            "experiment": 2,
-            "duration": 0.016845226287841797,
-            "solution": [
-                -1,
-                2,
-                8,
-                6
-            ],
-            "optimal": 6,
-            "message": "Done!"
-        },
-        {
             "experiment": 3,
-            "duration": 0.01197957992553711,
+            "duration": 0.006880283355712891,
             "solution": [
                 -1,
-                1,
+                0,
                 9
             ],
             "optimal": 4,
@@ -35,66 +34,64 @@
         },
         {
             "experiment": 4,
-            "duration": 0.017435073852539062,
+            "duration": 0.01598381996154785,
             "solution": [
                 -1,
-                12,
-                9
+                3
             ],
-            "optimal": 8,
+            "optimal": 9,
             "message": "Done!"
         },
         {
             "experiment": 5,
-            "duration": 0.021346569061279297,
+            "duration": 0.017476558685302734,
             "solution": [
                 -1,
-                6,
-                2,
-                13
+                3
             ],
-            "optimal": 10,
+            "optimal": 11,
             "message": "Done!"
         },
         {
             "experiment": 6,
-            "duration": 0.013026237487792969,
+            "duration": 0.025423049926757812,
             "solution": [
                 -1,
-                10,
+                2,
                 0
             ],
-            "optimal": 6,
+            "optimal": 11,
             "message": "Done!"
         }
     ],
     "greedy": [
         {
             "experiment": 1,
-            "duration": 0.0275726318359375,
+            "duration": 0.009530305862426758,
             "solution": [
                 -1,
+                6
+            ],
+            "optimal": 4,
+            "message": "Done!"
+        },
+        {
+            "experiment": 2,
+            "duration": 0.007854223251342773,
+            "solution": [
+                -1,
+                0,
                 1
             ],
             "optimal": 3,
             "message": "Done!"
         },
         {
-            "experiment": 2,
-            "duration": 0.009796619415283203,
-            "solution": [
-                -1,
-                5
-            ],
-            "optimal": 5,
-            "message": "Done!"
-        },
-        {
             "experiment": 3,
-            "duration": 0.007784843444824219,
+            "duration": 0.0057218074798583984,
             "solution": [
                 -1,
-                1,
+                0,
                 9
             ],
             "optimal": 4,
@@ -102,135 +99,129 @@
         },
         {
             "experiment": 4,
-            "duration": 0.008651494979858398,
+            "duration": 0.00717473030090332,
             "solution": [
                 -1,
-                12,
-                9
+                3
             ],
-            "optimal": 8,
+            "optimal": 9,
             "message": "Done!"
         },
         {
             "experiment": 5,
-            "duration": 0.008696556091308594,
+            "duration": 0.006821155548095703,
             "solution": [
                 -1,
-                6,
-                11
+                3
             ],
-            "optimal": 10,
+            "optimal": 11,
             "message": "Done!"
         },
         {
             "experiment": 6,
-            "duration": 0.007250308990478516,
+            "duration": 0.007726907730102539,
             "solution": [
                 -1,
-                10,
-                0
+                8,
+                11
             ],
-            "optimal": 6,
+            "optimal": 10,
             "message": "Done!"
         }
     ],
     "iqcp": [
         {
             "experiment": 1,
-            "duration": 0.9493134021759033,
+            "duration": 0.5592303276062012,
             "solution": [
                 -1,
-                1
+                6
+            ],
+            "optimal": 4.0,
+            "message": "Done!"
+        },
+        {
+            "experiment": 2,
+            "duration": 0.5186073780059814,
+            "solution": [
+                -1,
+                1,
+                0
             ],
             "optimal": 3.0,
             "message": "Done!"
         },
         {
-            "experiment": 2,
-            "duration": 0.6012980937957764,
-            "solution": [
-                -1,
-                2,
-                8,
-                6
-            ],
-            "optimal": 6.0,
-            "message": "Done!"
-        },
-        {
             "experiment": 3,
-            "duration": 0.6547141075134277,
+            "duration": 0.3079237937927246,
             "solution": [
                 -1,
-                1,
-                9
+                5,
+                3
             ],
             "optimal": 4.0,
             "message": "Done!"
         },
         {
             "experiment": 4,
-            "duration": 1.630875587463379,
+            "duration": 1.8349311351776123,
             "solution": [
                 -1,
-                12,
-                10
+                3
             ],
-            "optimal": 8.0,
+            "optimal": 9.0,
             "message": "Done!"
         },
         {
             "experiment": 5,
-            "duration": 1.8813731670379639,
+            "duration": 1.2583262920379639,
             "solution": [
                 -1,
-                6,
-                11
+                3
             ],
-            "optimal": 10.0,
+            "optimal": 11.0,
             "message": "Done!"
         },
         {
             "experiment": 6,
-            "duration": 3.923128128051758,
+            "duration": 1.2885653972625732,
             "solution": [
                 -1,
-                10,
-                11
+                2,
+                0
             ],
-            "optimal": 6.0,
+            "optimal": 11.0,
             "message": "Done!"
         }
     ],
     "ilp": [
         {
             "experiment": 1,
-            "duration": 0.4945695400238037,
+            "duration": 0.4221346378326416,
             "solution": [
                 -1,
+                6
+            ],
+            "optimal": 4.0,
+            "message": "Done!"
+        },
+        {
+            "experiment": 2,
+            "duration": 0.5418007373809814,
+            "solution": [
+                -1,
+                0,
                 1
             ],
             "optimal": 3.0,
             "message": "Done!"
         },
         {
-            "experiment": 2,
-            "duration": 0.6869761943817139,
-            "solution": [
-                -1,
-                2,
-                8,
-                6
-            ],
-            "optimal": 6.0,
-            "message": "Done!"
-        },
-        {
             "experiment": 3,
-            "duration": 0.6156110763549805,
+            "duration": 0.3133518695831299,
             "solution": [
                 -1,
-                1,
+                0,
                 9
             ],
             "optimal": 4.0,
@@ -238,80 +229,34 @@
         },
         {
             "experiment": 4,
-            "duration": 2.562323808670044,
+            "duration": 2.7168900966644287,
             "solution": [
                 -1,
-                12,
-                10
+                3
             ],
-            "optimal": 8.0,
+            "optimal": 9.0,
             "message": "Done!"
         },
         {
             "experiment": 5,
-            "duration": 3.1869966983795166,
+            "duration": 2.2795135974884033,
             "solution": [
                 -1,
-                6,
-                11
+                3
             ],
-            "optimal": 10.0,
+            "optimal": 11.0,
             "message": "Done!"
         },
         {
             "experiment": 6,
-            "duration": 6.181958913803101,
+            "duration": 2.6717803478240967,
             "solution": [
                 -1,
-                10,
+                2,
                 0
             ],
-            "optimal": 6.0,
+            "optimal": 11.0,
             "message": "Done!"
-        }
-    ],
-    "miqcp": [
-        {
-            "experiment": 1,
-            "duration": 0.08906054496765137,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
-        },
-        {
-            "experiment": 2,
-            "duration": 0.08263325691223145,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
-        },
-        {
-            "experiment": 3,
-            "duration": 0.06789541244506836,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
-        },
-        {
-            "experiment": 4,
-            "duration": 0.20111966133117676,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
-        },
-        {
-            "experiment": 5,
-            "duration": 0.28299760818481445,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
-        },
-        {
-            "experiment": 6,
-            "duration": 0.2995779514312744,
-            "solution": null,
-            "optimal": null,
-            "message": "ERROR: An exception occured into the process"
         }
     ]
 }
