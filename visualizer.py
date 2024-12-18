@@ -76,12 +76,12 @@ def plot_experiment(experiment_id, method, experiments_data, results_data, save_
     visualize.plot_fire_state(burning_nodes, burned_nodes, step, initial_firefighter_position)
     visualize.plot_2d_tree_with_root(tree, tree_root)
 
-    for firefighter_position in firefighter_positions:
+    for i in range(len(firefighter_positions)-1):
         step += 1
         fire_propagation.propagate()
         burning_nodes, burned_nodes = fire_propagation.display_state()
-        visualize.plot_fire_state(burning_nodes, burned_nodes, step, firefighter_position)
+        visualize.plot_fire_state(burning_nodes, burned_nodes, step, firefighter_positions[i+1])
 
 
 # Graficar y guardar cada paso de un experimento específico
-plot_experiment(1, 'dynamic_programming', experiments_data, results_data, save_path_prefix='experiment_1')
+plot_experiment(3, 'dynamic_programming', experiments_data, results_data, save_path_prefix='experiment_3')
